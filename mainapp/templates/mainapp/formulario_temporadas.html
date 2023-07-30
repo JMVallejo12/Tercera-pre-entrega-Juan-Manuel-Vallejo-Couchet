@@ -1,0 +1,24 @@
+{% extends 'mainapp/index.html' %}
+{% load static%}
+
+{% block about %}
+    
+
+
+
+<body>
+    <div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+            {{ form.as_table }}
+        </table>
+            <input type="submit" value="Enviar">
+
+
+        </form>
+    </div>
+</body>
+
+
+{% endblock about %}

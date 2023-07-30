@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>¡ALFanáticos!</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'mainapp/assets/favicon.ico' %}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'mainapp/css/styles.css' %}" rel="stylesheet" />
+        
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'Home' %}">INICIO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'About' %}">Informacion</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Temporadas' %}">Temporadas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Personajes' %}">Personajes</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="{% url 'suscriptores' %}">Suscriptores</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Bienvenido a la página de ¡ALFanáticos!</div>
+                <div class="masthead-heading text-uppercase">¡No hay problema Willie!</div>
+                
+            </div>
+        </header>
+        <!-- Services-->
+        
+        {% block about %}
+            <section class="py-5">
+                <div class="container my-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <h2>¡BIENVENIDO ALFanático!</h2>
+                    <p class="lead">Encontraste tu lugar feliz</p>
+                    <p class="mb-0">Somos una página creada por fanáticos de ALF, solo para fanáticos. Entérate de información sobre tus personajes favoritos, curiosidades y más!. No pierdas más el tiempo en Tik Tok, es momento de volverte... ¡ALFanático!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Image element - set the background image for the header in the line below-->
+            <img class="img-fluid d-block mx-auto" src="{% static 'mainapp/assets/img/index/imagendelmedio.jpg' %}" alt="..." />
+            <!-- Content section-->
+            <section class="py-5">
+                <div class="container my-5">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6">
+                            <h2>¡SUSCRÍBETE A NUESTRA PÁGINA!</h2>
+                            <p class="lead">Cuesta solamente ¡10 dólares al mes!</p>
+                            <p class="mb-0"><ul class="list-inline">
+                                <li>
+                                    
+                                    *  Acceso a los capítulos de ALF, en el idioma que prefieras
+                                       
+                                    
+                                                                                                                             
+                                </li>
+
+                                <li>
+                                   * Luego de los 5 meses siendo un seguidor fiel, te enviarémos una copia en Blue-Ray tu temporada preferida con la portada original
+
+                                </li>
+
+                                <li>
+                                   * Cada mes, sorteos de merchandising de ALF y la página de ALFanáticos
+
+                                </li>
+
+                                <li>
+                                   * Con tu suscripción, obtienes un muñeco de ALF para colgarlo en tu retrovisor del auto
+
+                                </li>
+                                
+                            </ul></p>
+                            <div class="row justify-content-center"><a href="{% url 'formulario_suscripcion' %}" class="btn btn-primary btn-xl text-uppercase">Suscribirse</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        {% endblock about %}
+            
+        
+        {% block formularioSuscriptor %}
+            
+        {% endblock formularioSuscriptor %}
+
+        
+        {% block formulario_personaje %}
+            
+        {% endblock formulario_personaje %}
+            
+            
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; ALFanaticos.com</div>
+                    
+                    
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Portfolio item 1 modal popup-->
+        
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'mainapp/js/scripts.js' %}"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

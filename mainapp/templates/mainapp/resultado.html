@@ -1,0 +1,38 @@
+{% extends 'mainapp/index.html' %}
+{% load static %}
+
+
+{% block about %}
+    
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th><h1>Nombre del personaje</h1></th>
+            <th><h1>Apellido del personaje</h1></th>
+            <th><h1>Nombre </h1></th>
+            <th><h1>Apellido</h1></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        {% for personajes in personaje %}
+            <tr>
+                <td><h2>{{ personajes.id }}</h2> -</td>
+                <td><h2>{{ personajes.nombrePersonaje }}</h2></td>
+                <td><h2>{{ personajes.apellidoPersonaje }}</h2></td>
+                <td><h2>{{ personajes.nombre}}</h2></td>
+                <td><h2>{{ personajes.apellido }}</h2></td>
+                
+            </tr>
+        {% endfor %}
+    </tbody>
+</table> 
+
+
+{% endblock about %}

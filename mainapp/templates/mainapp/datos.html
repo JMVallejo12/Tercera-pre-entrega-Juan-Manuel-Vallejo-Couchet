@@ -1,0 +1,70 @@
+
+    {% extends 'mainapp/index.html' %}
+    {% load static %}
+    
+
+{% block datos %}
+    
+
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Test Page</title>
+        
+    <body>
+        
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">LISTA DE TODOS LOS PERSONAJES</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th><h1>Nombre</h1></th>
+                                <th><h1>Apellido</h1></th>
+        
+                            </tr>
+        
+                        </thead>
+                    
+                        <tbody>
+                            {% for personajes in Personajes %}
+                                <tr>
+                                    <td><h2>{{ personajes.id }}</h2> -</td>
+                                    <td><h2>{{ personajes.nombrePersonaje }}</h2></td>
+                                    <td><h2>{{ personajes.apellidoPersonaje }}</h2></td>
+                                    <td>
+                                        <a
+                                          href="{url 'formulario_personajes' personajes.id %}"
+                                          class="btn btn-primary"
+                                          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                          ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                                        </a>
+                                        <a
+                                          href="#"
+                                          class="btn btn-danger"
+                                          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                          ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                                        </a>
+                                      </td> 
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>    
+                    
+                    
+            
+        </div>
+    
+    </body>
+    </html>
+       
+{% endblock datos %}
+
+
+
+
+
+

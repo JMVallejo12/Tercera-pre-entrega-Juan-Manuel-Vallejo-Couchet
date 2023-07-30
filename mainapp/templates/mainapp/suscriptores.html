@@ -1,0 +1,56 @@
+{% extends 'mainapp/index.html' %}
+{% load static %}
+
+
+
+{% block about %}
+    
+
+
+
+<h2 class="section-heading text-uppercase">LISTA DE TODOS LOS SUCRIPTORES</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th><h1>Nombre</h1></th>
+            <th><h1>Apellido</h1></th>
+            <th><h1>Direccion</h1></th>
+            <th><h1>Edad</h1></th>
+            <th><h1>Sexo</h1></th>
+            <th><h1>Tarjeta</h1></th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+        {% for suscriptor in suscriptores %}
+            <tr>
+                <td><h2>{{ suscriptor.id }}</h2> -</td>
+                <td><h2>{{ suscriptor.nombre }}</h2></td>
+                <td><h2>{{ suscriptor.apellido }}</h2></td>
+                <td><h2>{{ suscriptor.direccion }}</h2></td>
+                <td><h2>{{ suscriptor.edad }}</h2></td>
+                <td><h2>{{ suscriptor.sexo }}</h2></td>
+                <td><h2>{{ suscriptor.tarjeta }}</h2></td>
+                <td>
+                    <a
+                      href="{% url 'update_suscriptor' suscriptor.id %}"
+                      class="btn btn-primary"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                    </a>
+                    <a
+                      href="{% url 'delete_suscriptor' suscriptor.id %}"
+                      class="btn btn-danger"
+                      style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                      ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                    </a>
+                  </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>  
+
+{% endblock about %}
